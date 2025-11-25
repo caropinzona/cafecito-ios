@@ -107,15 +107,24 @@ struct ShopDetailView: View {
     }
     
     private func fetchShopDetails() async {
+        print("Fetching details for shopID: \(shopID)") // Debug log
         do {
             let doc = try await Firestore.firestore().collection("shops").document(shopID).getDocument()
-            if let fetchedShop = try? doc.data(as: Shop.self) {
-                self.shop = fetchedShop
+            if doc.exists {
+                print("Document found!")
+                if let fetchedShop = try? doc.data(as: Shop.self) {
+                    self.shop = fetchedShop
+                } else {
+                    print("Failed to decode Shop data")
+                    self.errorMessage = "Failed to load shop data"
+                }
             } else {
+                print("Document does not exist in Firestore")
                 self.errorMessage = "Shop not found"
             }
             self.isLoading = false
         } catch {
+            print("Firestore Error: \(error.localizedDescription)")
             self.errorMessage = error.localizedDescription
             self.isLoading = false
         }
