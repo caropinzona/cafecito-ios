@@ -1,6 +1,11 @@
 import SwiftUI
 import MapKit
 
+struct MapItemWrapper: Identifiable {
+    let id = UUID()
+    let item: MKMapItem
+}
+
 struct ContentView: View {
     @StateObject private var locationManager = LocationManager()
     @StateObject private var shopDiscovery = ShopDiscoveryManager()
@@ -10,13 +15,18 @@ struct ContentView: View {
     @State private var searchText = ""
     @State private var foundItems: [MKMapItem] = []
     
+    // Selection state
+    @State private var selectedMapItem: MKMapItem?
+    @State private var presentedSheetItem: MapItemWrapper?
+    
     var body: some View {
         ZStack(alignment: .top) {
-            Map(position: $cameraPosition) {
+            Map(position: $cameraPosition, selection: $selectedMapItem) {
                 UserAnnotation()
                 
                 ForEach(foundItems, id: \.self) { item in
                     Marker(item.name ?? "Shop", coordinate: item.placemark.coordinate)
+                        .tag(item)
                 }
             }
             .mapControls {
@@ -25,6 +35,16 @@ struct ContentView: View {
             }
             .onAppear {
                 locationManager.requestPermission()
+            }
+            .onChange(of: selectedMapItem) { oldValue, newValue in
+                if let newValue = newValue {
+                    presentedSheetItem = MapItemWrapper(item: newValue)
+                }
+            }
+            .sheet(item: $presentedSheetItem) { wrapper in
+                ShopPreviewView(mapItem: wrapper.item) {
+                    addShopToCafecito(wrapper.item)
+                }
             }
             
             // Simple Search Overlay
@@ -63,6 +83,20 @@ struct ContentView: View {
                 }
             } catch {
                 print("Search error: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    func addShopToCafecito(_ item: MKMapItem) {
+        Task {
+            do {
+                let shopID = try await shopDiscovery.saveShopToDatabase(mapItem: item)
+                print("Successfully added shop with ID: \(shopID)")
+                // Dismiss sheet
+                presentedSheetItem = nil
+                selectedMapItem = nil
+            } catch {
+                print("Error adding shop: \(error.localizedDescription)")
             }
         }
     }

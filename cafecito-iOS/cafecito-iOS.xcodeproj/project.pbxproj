@@ -14,6 +14,15 @@
 		85B4CFC72ED53BB000149065 /* cafecito_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4CFC62ED53BB000149065 /* cafecito_iOSTests.swift */; };
 		85B4CFD12ED53BB000149065 /* cafecito_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4CFD02ED53BB000149065 /* cafecito_iOSUITests.swift */; };
 		85B4CFD32ED53BB000149065 /* cafecito_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4CFD22ED53BB000149065 /* cafecito_iOSUITestsLaunchTests.swift */; };
+		85B4CFE02ED5400F00149065 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85B4CFDF2ED5400F00149065 /* GoogleService-Info.plist */; };
+		85B4CFE92ED5418E00149065 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4CFE22ED5418E00149065 /* LocationManager.swift */; };
+		85B4CFEA2ED5418E00149065 /* ShopDiscoveryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4CFE32ED5418E00149065 /* ShopDiscoveryManager.swift */; };
+		85B4CFEB2ED5418E00149065 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4CFE52ED5418E00149065 /* Review.swift */; };
+		85B4CFEC2ED5418E00149065 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4CFE62ED5418E00149065 /* Shop.swift */; };
+		85B4CFED2ED5418E00149065 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4CFE72ED5418E00149065 /* User.swift */; };
+		85EC40272ED5446C00BC4A24 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 85EC40262ED5446C00BC4A24 /* FirebaseAuth */; };
+		85EC40292ED5446C00BC4A24 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 85EC40282ED5446C00BC4A24 /* FirebaseFirestore */; };
+		85EC402B2ED5446C00BC4A24 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 85EC402A2ED5446C00BC4A24 /* FirebaseStorage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +54,12 @@
 		85B4CFCC2ED53BB000149065 /* cafecito-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "cafecito-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85B4CFD02ED53BB000149065 /* cafecito_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cafecito_iOSUITests.swift; sourceTree = "<group>"; };
 		85B4CFD22ED53BB000149065 /* cafecito_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cafecito_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		85B4CFDF2ED5400F00149065 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		85B4CFE22ED5418E00149065 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		85B4CFE32ED5418E00149065 /* ShopDiscoveryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopDiscoveryManager.swift; sourceTree = "<group>"; };
+		85B4CFE52ED5418E00149065 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		85B4CFE62ED5418E00149065 /* Shop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
+		85B4CFE72ED5418E00149065 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +67,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85EC40272ED5446C00BC4A24 /* FirebaseAuth in Frameworks */,
+				85EC40292ED5446C00BC4A24 /* FirebaseFirestore in Frameworks */,
+				85EC402B2ED5446C00BC4A24 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +97,7 @@
 				85B4CFC52ED53BB000149065 /* cafecito-iOSTests */,
 				85B4CFCF2ED53BB000149065 /* cafecito-iOSUITests */,
 				85B4CFB22ED53BAE00149065 /* Products */,
+				85EC40252ED5446B00BC4A24 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,10 +114,13 @@
 		85B4CFB32ED53BAE00149065 /* cafecito-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				85B4CFE42ED5418E00149065 /* Managers */,
+				85B4CFE82ED5418E00149065 /* Models */,
 				85B4CFB42ED53BAE00149065 /* cafecito_iOSApp.swift */,
 				85B4CFB62ED53BAE00149065 /* ContentView.swift */,
 				85B4CFB82ED53BB000149065 /* Assets.xcassets */,
 				85B4CFBA2ED53BB000149065 /* cafecito_iOS.entitlements */,
+				85B4CFDF2ED5400F00149065 /* GoogleService-Info.plist */,
 				85B4CFBB2ED53BB000149065 /* Preview Content */,
 			);
 			path = "cafecito-iOS";
@@ -129,6 +151,32 @@
 			path = "cafecito-iOSUITests";
 			sourceTree = "<group>";
 		};
+		85B4CFE42ED5418E00149065 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				85B4CFE22ED5418E00149065 /* LocationManager.swift */,
+				85B4CFE32ED5418E00149065 /* ShopDiscoveryManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		85B4CFE82ED5418E00149065 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				85B4CFE52ED5418E00149065 /* Review.swift */,
+				85B4CFE62ED5418E00149065 /* Shop.swift */,
+				85B4CFE72ED5418E00149065 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		85EC40252ED5446B00BC4A24 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -145,6 +193,11 @@
 			dependencies = (
 			);
 			name = "cafecito-iOS";
+			packageProductDependencies = (
+				85EC40262ED5446C00BC4A24 /* FirebaseAuth */,
+				85EC40282ED5446C00BC4A24 /* FirebaseFirestore */,
+				85EC402A2ED5446C00BC4A24 /* FirebaseStorage */,
+			);
 			productName = "cafecito-iOS";
 			productReference = 85B4CFB12ED53BAE00149065 /* cafecito-iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +270,9 @@
 				Base,
 			);
 			mainGroup = 85B4CFA82ED53BAE00149065;
+			packageReferences = (
+				85B4CFE12ED540A300149065 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 85B4CFB22ED53BAE00149065 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -235,6 +291,7 @@
 			files = (
 				85B4CFBD2ED53BB000149065 /* Preview Assets.xcassets in Resources */,
 				85B4CFB92ED53BB000149065 /* Assets.xcassets in Resources */,
+				85B4CFE02ED5400F00149065 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +316,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85B4CFEB2ED5418E00149065 /* Review.swift in Sources */,
 				85B4CFB72ED53BAE00149065 /* ContentView.swift in Sources */,
 				85B4CFB52ED53BAE00149065 /* cafecito_iOSApp.swift in Sources */,
+				85B4CFEC2ED5418E00149065 /* Shop.swift in Sources */,
+				85B4CFEA2ED5418E00149065 /* ShopDiscoveryManager.swift in Sources */,
+				85B4CFE92ED5418E00149065 /* LocationManager.swift in Sources */,
+				85B4CFED2ED5418E00149065 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,6 +671,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		85B4CFE12ED540A300149065 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = exactVersion;
+				version = 11.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		85EC40262ED5446C00BC4A24 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 85B4CFE12ED540A300149065 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		85EC40282ED5446C00BC4A24 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 85B4CFE12ED540A300149065 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		85EC402A2ED5446C00BC4A24 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 85B4CFE12ED540A300149065 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 85B4CFA92ED53BAE00149065 /* Project object */;
 }
