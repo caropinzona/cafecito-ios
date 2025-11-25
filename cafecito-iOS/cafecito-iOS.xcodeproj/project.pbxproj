@@ -28,6 +28,9 @@
 		85EC40332ED54ACD00BC4A24 /* ShopDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC40322ED54ACD00BC4A24 /* ShopDetailView.swift */; };
 		85EC40352ED54C0A00BC4A24 /* RateCoffeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC40342ED54C0A00BC4A24 /* RateCoffeeView.swift */; };
 		85EC40372ED54C2D00BC4A24 /* ReviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC40362ED54C2D00BC4A24 /* ReviewManager.swift */; };
+		85EC403B2ED5523600BC4A24 /* HomeMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC40382ED5523600BC4A24 /* HomeMapView.swift */; };
+		85EC403C2ED5523600BC4A24 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC40392ED5523600BC4A24 /* ProfileView.swift */; };
+		85EC403D2ED5523600BC4A24 /* ShopListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC403A2ED5523600BC4A24 /* ShopListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +73,9 @@
 		85EC40322ED54ACD00BC4A24 /* ShopDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShopDetailView.swift; path = Views/ShopDetailView.swift; sourceTree = "<group>"; };
 		85EC40342ED54C0A00BC4A24 /* RateCoffeeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RateCoffeeView.swift; path = Views/RateCoffeeView.swift; sourceTree = "<group>"; };
 		85EC40362ED54C2D00BC4A24 /* ReviewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReviewManager.swift; path = Managers/ReviewManager.swift; sourceTree = "<group>"; };
+		85EC40382ED5523600BC4A24 /* HomeMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeMapView.swift; path = Views/HomeMapView.swift; sourceTree = "<group>"; };
+		85EC40392ED5523600BC4A24 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = Views/ProfileView.swift; sourceTree = "<group>"; };
+		85EC403A2ED5523600BC4A24 /* ShopListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShopListView.swift; path = Views/ShopListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +130,9 @@
 		85B4CFB32ED53BAE00149065 /* cafecito-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				85EC40382ED5523600BC4A24 /* HomeMapView.swift */,
+				85EC40392ED5523600BC4A24 /* ProfileView.swift */,
+				85EC403A2ED5523600BC4A24 /* ShopListView.swift */,
 				85EC40362ED54C2D00BC4A24 /* ReviewManager.swift */,
 				85EC40342ED54C0A00BC4A24 /* RateCoffeeView.swift */,
 				85EC40322ED54ACD00BC4A24 /* ShopDetailView.swift */,
@@ -348,7 +357,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85EC403D2ED5523600BC4A24 /* ShopListView.swift in Sources */,
 				85EC40332ED54ACD00BC4A24 /* ShopDetailView.swift in Sources */,
+				85EC403C2ED5523600BC4A24 /* ProfileView.swift in Sources */,
 				85B4CFEB2ED5418E00149065 /* Review.swift in Sources */,
 				85B4CFB72ED53BAE00149065 /* ContentView.swift in Sources */,
 				85B4CFB52ED53BAE00149065 /* cafecito_iOSApp.swift in Sources */,
@@ -358,6 +369,7 @@
 				85B4CFEA2ED5418E00149065 /* ShopDiscoveryManager.swift in Sources */,
 				85B4CFE92ED5418E00149065 /* LocationManager.swift in Sources */,
 				85B4CFED2ED5418E00149065 /* User.swift in Sources */,
+				85EC403B2ED5523600BC4A24 /* HomeMapView.swift in Sources */,
 				85EC40302ED5483F00BC4A24 /* ShopPreviewView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

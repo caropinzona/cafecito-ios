@@ -1,6 +1,11 @@
 import SwiftUI
 import MapKit
 
+struct MapItemWrapper: Identifiable {
+    let id = UUID()
+    let item: MKMapItem
+}
+
 struct HomeMapView: View {
     @ObservedObject var locationManager: LocationManager
     @ObservedObject var shopDiscovery: ShopDiscoveryManager
