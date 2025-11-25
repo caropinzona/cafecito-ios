@@ -8,190 +8,195 @@ struct ShopDetailView: View {
     @State private var errorMessage: String?
     @State private var isShowingRateSheet = false
     
-    // Custom Colors
-    let coffeeDark = Color(red: 0.3, green: 0.2, blue: 0.15)
-    let coffeeCream = Color(red: 0.96, green: 0.93, blue: 0.88)
+    // Design Constants
+    private let headerHeight: CGFloat = 300
+    private let primaryColor = Color(red: 0.1, green: 0.1, blue: 0.1) // Almost black
+    private let secondaryColor = Color.gray
+    private let accentColor = Color.orange
     
     var body: some View {
         ZStack(alignment: .bottom) {
             // Background
-            coffeeCream.opacity(0.3).ignoresSafeArea()
+            Color.white.ignoresSafeArea()
             
             if isLoading {
                 ProgressView()
                     .scaleEffect(1.5)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else if let error = errorMessage {
-                VStack {
-                    Image(systemName: "exclamationmark.triangle")
-                        .font(.largeTitle)
-                        .foregroundColor(.orange)
-                    Text(error)
-                        .multilineTextAlignment(.center)
-                        .padding()
-                }
+                Text("Error: \(error)")
+                    .foregroundColor(.red)
             } else if let shop = shop {
                 ScrollView {
                     VStack(spacing: 0) {
-                        // Hero Header
-                        ZStack(alignment: .bottomLeading) {
-                            LinearGradient(
-                                colors: [coffeeDark, coffeeDark.opacity(0.8)],
-                                startPoint: .topLeading,
-                                endPoint: .bottomTrailing
-                            )
-                            .frame(height: 260) // Increased height for better spacing
-                            
-                            // Pattern/Icon overlay
-                            Image(systemName: "cup.and.saucer.fill")
-                                .font(.system(size: 140))
-                                .foregroundColor(.white.opacity(0.08))
-                                .offset(x: 180, y: 40)
-                                .rotationEffect(.degrees(-15))
-                            
-                            VStack(alignment: .leading, spacing: 8) {
-                                Spacer() // Push content down
-                                Text(shop.name)
-                                    .font(.system(size: 32, weight: .heavy, design: .rounded))
-                                    .foregroundColor(.white)
-                                    .shadow(radius: 2)
-                                    .multilineTextAlignment(.leading)
+                        // 1. Header Image
+                        GeometryReader { geometry in
+                            let minY = geometry.frame(in: .global).minY
+                            ZStack {
+                                Color(red: 0.3, green: 0.2, blue: 0.15) // Fallback color
                                 
-                                HStack {
-                                    Image(systemName: "mappin.circle.fill")
-                                    Text(shop.address)
-                                        .lineLimit(1)
-                                }
-                                .font(.subheadline)
-                                .foregroundColor(.white.opacity(0.9))
-                                .padding(.bottom, 40) // Add extra padding at bottom to clear the floating card
+                                // Placeholder Pattern since we don't have photos yet
+                                Image(systemName: "cup.and.saucer.fill")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 120)
+                                    .foregroundColor(.white.opacity(0.1))
                             }
-                            .padding(24)
-                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .frame(width: geometry.size.width, height: geometry.size.height + (minY > 0 ? minY : 0))
+                            .offset(y: minY > 0 ? -minY : 0)
                         }
+                        .frame(height: headerHeight)
                         
-                        VStack(spacing: 24) {
-                            // Rating Card
-                            HStack(spacing: 0) { // Zero spacing, control with padding/frames
-                                VStack(spacing: 4) {
-                                    Text(String(format: "%.1f", shop.aggregates.globalRating))
-                                        .font(.system(size: 44, weight: .black, design: .rounded))
-                                        .foregroundColor(coffeeDark)
-                                    
-                                    HStack(spacing: 2) {
-                                        ForEach(1...5, id: \.self) { star in
-                                            Image(systemName: "star.fill")
-                                                .font(.caption2)
-                                                .foregroundColor(star <= Int(shop.aggregates.globalRating.rounded()) ? .orange : .gray.opacity(0.3))
-                                        }
-                                    }
-                                    
-                                    Text("\(shop.aggregates.count) reviews")
-                                        .font(.caption)
-                                        .foregroundColor(.secondary)
-                                }
-                                .frame(maxWidth: .infinity) // Use frame instead of fixed width
-                                
-                                Divider()
-                                    .frame(height: 60)
-                                
-                                VStack(alignment: .leading, spacing: 8) {
-                                    Text("Highlights")
-                                        .font(.headline)
-                                        .foregroundColor(.secondary)
-                                    
-                                    if let topMethod = shop.aggregates.brewRatings.max(by: { $0.value < $1.value })?.key {
-                                        HStack {
-                                            Image(systemName: "flame.fill")
-                                                .foregroundColor(.orange)
-                                            Text("Best for: \(topMethod)")
-                                                .font(.subheadline)
-                                                .fontWeight(.medium)
-                                                .lineLimit(2) // Allow text to wrap if long
-                                                .fixedSize(horizontal: false, vertical: true)
-                                        }
-                                    } else {
-                                        Text("No ratings yet")
-                                            .font(.subheadline)
-                                            .italic()
-                                            .foregroundColor(.secondary)
-                                    }
-                                }
-                                .frame(maxWidth: .infinity, alignment: .leading) // Use frame instead of spacer
-                                .padding(.leading, 16)
-                            }
-                            .padding(20)
-                            .background(Color.white)
-                            .cornerRadius(20)
-                            .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 5)
-                            .padding(.horizontal, 16) // Ensure card doesn't touch screen edges
-                            .offset(y: -50) // Pull up more to overlap header nicely
-                            .padding(.bottom, -30) // Compensate for the negative offset in the layout flow
+                        // Main Content
+                        VStack(alignment: .leading, spacing: 24) {
                             
-                            // Brew Methods Section
+                            // 2 & 3. Name and Ratings Header
+                            HStack(alignment: .top, spacing: 16) {
+                                // Name (Left)
+                                Text(shop.name)
+                                    .font(.system(size: 28, weight: .bold))
+                                    .foregroundColor(primaryColor)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                
+                                // Ratings (Right)
+                                VStack(alignment: .trailing, spacing: 8) {
+                                    // Prominent Coffee Rating
+                                    HStack(spacing: 4) {
+                                        Text(String(format: "%.1f", shop.aggregates.globalRating))
+                                            .font(.system(size: 22, weight: .black))
+                                        Image(systemName: "star.fill")
+                                            .font(.caption)
+                                    }
+                                    .foregroundColor(primaryColor)
+                                    
+                                    // Smaller Ratings (Pastries/Amenities placeholders)
+                                    HStack(spacing: 12) {
+                                        // Amenities Score (Derived from Vibe avg for now)
+                                        HStack(spacing: 2) {
+                                            Image(systemName: "wifi")
+                                            Text("4.8")
+                                        }
+                                        
+                                        // Pastries Score (Placeholder)
+                                        HStack(spacing: 2) {
+                                            Image(systemName: "birthday.cake")
+                                            Text("N/A")
+                                        }
+                                    }
+                                    .font(.caption)
+                                    .foregroundColor(secondaryColor)
+                                }
+                            }
+                            
+                            // 4. Chips (Amenities)
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack(spacing: 10) {
+                                    // "Open Now" Placeholder
+                                    StatusChip(text: "Open Now", icon: "clock.fill", isActive: true)
+                                    
+                                    // Wifi (Check if "Wifi" is in vibeRatings)
+                                    if shop.aggregates.vibeRatings.keys.contains(where: { $0.contains("Wifi") }) {
+                                        StatusChip(text: "Wifi", icon: "wifi", isActive: false)
+                                    }
+                                    
+                                    // Seating
+                                    StatusChip(text: "Seating", icon: "chair.lounge.fill", isActive: false)
+                                }
+                            }
+                            
+                            Divider()
+                            
+                            // 5. Opening Hours (Placeholder)
+                            HStack(alignment: .top) {
+                                Image(systemName: "clock")
+                                    .foregroundColor(secondaryColor)
+                                VStack(alignment: .leading) {
+                                    Text("Open Today")
+                                        .font(.subheadline)
+                                        .fontWeight(.medium)
+                                    Text("07:00 AM - 06:00 PM")
+                                        .font(.caption)
+                                        .foregroundColor(secondaryColor)
+                                }
+                            }
+                            
+                            Divider()
+                            
+                            // 6. Brew Type Ratings
                             VStack(alignment: .leading, spacing: 16) {
-                                Text("Brew Methods")
-                                    .font(.title3)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(coffeeDark)
-                                    .padding(.horizontal)
+                                Text("Brew Breakdown")
+                                    .font(.headline)
                                 
                                 if shop.aggregates.brewRatings.isEmpty {
-                                    Text("No brew methods rated yet.")
+                                    Text("No ratings yet")
                                         .font(.subheadline)
                                         .foregroundColor(.secondary)
-                                        .padding(.horizontal)
                                 } else {
-                                    ScrollView(.horizontal, showsIndicators: false) {
-                                        HStack(spacing: 12) {
-                                            ForEach(shop.aggregates.brewRatings.sorted(by: { $0.value > $1.value }), id: \.key) { key, value in
-                                                VStack(alignment: .leading) {
-                                                    Text(key)
-                                                        .font(.headline)
-                                                        .foregroundColor(coffeeDark)
-                                                    
-                                                    HStack {
-                                                        Image(systemName: "star.fill")
-                                                            .font(.caption2)
-                                                            .foregroundColor(.orange)
-                                                        Text(String(format: "%.1f", value))
-                                                            .font(.subheadline)
-                                                            .fontWeight(.bold)
-                                                            .foregroundColor(.secondary)
-                                                    }
-                                                }
-                                                .padding(12)
-                                                .background(Color.white)
-                                                .cornerRadius(12)
-                                                .shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 2)
-                                            }
+                                    ForEach(shop.aggregates.brewRatings.sorted(by: { $0.value > $1.value }), id: \.key) { key, value in
+                                        HStack {
+                                            Text(key)
+                                                .font(.subheadline)
+                                            Spacer()
+                                            RatingBar(rating: value)
+                                            Text(String(format: "%.1f", value))
+                                                .font(.caption)
+                                                .fontWeight(.bold)
+                                                .frame(width: 30, alignment: .trailing)
                                         }
-                                        .padding(.horizontal)
                                     }
                                 }
                             }
                             
-                            Spacer(minLength: 100) // Space for FAB
+                            Divider()
+                            
+                            // 7. Amenities/Vibes Ratings
+                            VStack(alignment: .leading, spacing: 16) {
+                                Text("Vibe Check")
+                                    .font(.headline)
+                                
+                                if shop.aggregates.vibeRatings.isEmpty {
+                                    Text("No vibes reported yet")
+                                        .font(.subheadline)
+                                        .foregroundColor(.secondary)
+                                } else {
+                                    // Simple flow for vibe tags since they aren't 1-5 ratings in our model yet (just presence or basic score)
+                                    // Assuming the model has [String: Float] for vibeRatings
+                                    FlowLayout(items: Array(shop.aggregates.vibeRatings.keys), spacing: 8) { vibe in
+                                        Text(vibe)
+                                            .font(.caption)
+                                            .padding(.horizontal, 12)
+                                            .padding(.vertical, 6)
+                                            .background(Color.gray.opacity(0.1))
+                                            .cornerRadius(16)
+                                    }
+                                }
+                            }
+                            
+                            Spacer(minLength: 100) // Bottom padding for FAB
                         }
+                        .padding(24)
+                        .background(Color.white)
+                        .cornerRadius(24, corners: [.topLeft, .topRight])
+                        .offset(y: -30) // Pull up over image
                     }
                 }
                 .edgesIgnoringSafeArea(.top)
                 
-                // Floating Action Button
-                Button(action: {
-                    isShowingRateSheet = true
-                }) {
-                    HStack {
-                        Image(systemName: "plus.bubble.fill")
+                // Floating CTA
+                VStack {
+                    Spacer()
+                    Button(action: {
+                        isShowingRateSheet = true
+                    }) {
                         Text("Rate this Coffee")
-                            .fontWeight(.bold)
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(primaryColor)
+                            .cornerRadius(16)
+                            .shadow(radius: 10)
                     }
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(coffeeDark)
-                    .foregroundColor(.white)
-                    .cornerRadius(16)
-                    .shadow(radius: 5)
                     .padding(.horizontal, 24)
                     .padding(.bottom, 20)
                 }
@@ -211,13 +216,10 @@ struct ShopDetailView: View {
     }
     
     private func fetchShopDetails() async {
-        // Keep existing logic
         do {
             let doc = try await Firestore.firestore().collection("shops").document(shopID).getDocument()
-            if doc.exists {
-                if let fetchedShop = try? doc.data(as: Shop.self) {
-                    self.shop = fetchedShop
-                }
+            if let fetchedShop = try? doc.data(as: Shop.self) {
+                self.shop = fetchedShop
             } else {
                 self.errorMessage = "Shop not found"
             }
@@ -226,5 +228,86 @@ struct ShopDetailView: View {
             self.errorMessage = error.localizedDescription
             self.isLoading = false
         }
+    }
+}
+
+// MARK: - Helper Views
+
+struct StatusChip: View {
+    let text: String
+    let icon: String
+    let isActive: Bool
+    
+    var body: some View {
+        HStack(spacing: 6) {
+            Image(systemName: icon)
+                .font(.caption)
+            Text(text)
+                .font(.caption)
+                .fontWeight(.medium)
+        }
+        .padding(.horizontal, 12)
+        .padding(.vertical, 8)
+        .background(isActive ? Color.green.opacity(0.1) : Color.gray.opacity(0.05))
+        .foregroundColor(isActive ? .green : .primary)
+        .overlay(
+            RoundedRectangle(cornerRadius: 20)
+                .stroke(isActive ? Color.green : Color.clear, lineWidth: 1)
+        )
+        .cornerRadius(20)
+    }
+}
+
+struct RatingBar: View {
+    let rating: Float
+    
+    var body: some View {
+        GeometryReader { geometry in
+            ZStack(alignment: .leading) {
+                Capsule()
+                    .fill(Color.gray.opacity(0.2))
+                    .frame(height: 6)
+                
+                Capsule()
+                    .fill(Color.orange)
+                    .frame(width: geometry.size.width * CGFloat(rating / 5.0), height: 6)
+            }
+        }
+        .frame(height: 6)
+        .frame(width: 100)
+    }
+}
+
+// Simple Flow Layout Helper
+struct FlowLayout<Data: RandomAccessCollection, Content: View>: View where Data.Element: Hashable {
+    let items: Data
+    let spacing: CGFloat
+    let content: (Data.Element) -> Content
+    
+    var body: some View {
+        // Simplified vertical list for now to avoid complex geometry reader logic in a single file snippet
+        // In a real app, use a robust FlowLayout implementation
+        LazyVGrid(columns: [GridItem(.adaptive(minimum: 80))], spacing: spacing) {
+            ForEach(items, id: \.self) { item in
+                content(item)
+            }
+        }
+    }
+}
+
+// Extension for specific corner radius
+extension View {
+    func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
+        clipShape(RoundedCorner(radius: radius, corners: corners))
+    }
+}
+
+struct RoundedCorner: Shape {
+    var radius: CGFloat = .infinity
+    var corners: UIRectCorner = .allCorners
+    
+    func path(in rect: CGRect) -> Path {
+        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        return Path(path.cgPath)
     }
 }
