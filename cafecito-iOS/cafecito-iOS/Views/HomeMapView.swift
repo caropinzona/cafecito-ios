@@ -127,6 +127,26 @@ struct HomeMapView: View {
                 }
                 
                 Spacer()
+                
+                // Recenter Button
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        withAnimation {
+                            cameraPosition = .userLocation(fallback: .automatic)
+                        }
+                    }) {
+                        Image(systemName: "location.fill")
+                            .font(.title2)
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color.brown)
+                            .clipShape(Circle())
+                            .shadow(radius: 4)
+                    }
+                    .padding(.trailing)
+                    .padding(.bottom, 30) // Adjust for tab bar
+                }
             }
             .padding(.top)
         }
