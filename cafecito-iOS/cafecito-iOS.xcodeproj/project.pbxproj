@@ -1,0 +1,614 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		85B4CFB52ED53BAE00149065 /* cafecito_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4CFB42ED53BAE00149065 /* cafecito_iOSApp.swift */; };
+		85B4CFB72ED53BAE00149065 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4CFB62ED53BAE00149065 /* ContentView.swift */; };
+		85B4CFB92ED53BB000149065 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85B4CFB82ED53BB000149065 /* Assets.xcassets */; };
+		85B4CFBD2ED53BB000149065 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85B4CFBC2ED53BB000149065 /* Preview Assets.xcassets */; };
+		85B4CFC72ED53BB000149065 /* cafecito_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4CFC62ED53BB000149065 /* cafecito_iOSTests.swift */; };
+		85B4CFD12ED53BB000149065 /* cafecito_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4CFD02ED53BB000149065 /* cafecito_iOSUITests.swift */; };
+		85B4CFD32ED53BB000149065 /* cafecito_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4CFD22ED53BB000149065 /* cafecito_iOSUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		85B4CFC32ED53BB000149065 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 85B4CFA92ED53BAE00149065 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 85B4CFB02ED53BAE00149065;
+			remoteInfo = "cafecito-iOS";
+		};
+		85B4CFCD2ED53BB000149065 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 85B4CFA92ED53BAE00149065 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 85B4CFB02ED53BAE00149065;
+			remoteInfo = "cafecito-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		85B4CFB12ED53BAE00149065 /* cafecito-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cafecito-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		85B4CFB42ED53BAE00149065 /* cafecito_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cafecito_iOSApp.swift; sourceTree = "<group>"; };
+		85B4CFB62ED53BAE00149065 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		85B4CFB82ED53BB000149065 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		85B4CFBA2ED53BB000149065 /* cafecito_iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = cafecito_iOS.entitlements; sourceTree = "<group>"; };
+		85B4CFBC2ED53BB000149065 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		85B4CFC22ED53BB000149065 /* cafecito-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "cafecito-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		85B4CFC62ED53BB000149065 /* cafecito_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cafecito_iOSTests.swift; sourceTree = "<group>"; };
+		85B4CFCC2ED53BB000149065 /* cafecito-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "cafecito-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		85B4CFD02ED53BB000149065 /* cafecito_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cafecito_iOSUITests.swift; sourceTree = "<group>"; };
+		85B4CFD22ED53BB000149065 /* cafecito_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cafecito_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		85B4CFAE2ED53BAE00149065 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85B4CFBF2ED53BB000149065 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85B4CFC92ED53BB000149065 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		85B4CFA82ED53BAE00149065 = {
+			isa = PBXGroup;
+			children = (
+				85B4CFB32ED53BAE00149065 /* cafecito-iOS */,
+				85B4CFC52ED53BB000149065 /* cafecito-iOSTests */,
+				85B4CFCF2ED53BB000149065 /* cafecito-iOSUITests */,
+				85B4CFB22ED53BAE00149065 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		85B4CFB22ED53BAE00149065 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				85B4CFB12ED53BAE00149065 /* cafecito-iOS.app */,
+				85B4CFC22ED53BB000149065 /* cafecito-iOSTests.xctest */,
+				85B4CFCC2ED53BB000149065 /* cafecito-iOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		85B4CFB32ED53BAE00149065 /* cafecito-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				85B4CFB42ED53BAE00149065 /* cafecito_iOSApp.swift */,
+				85B4CFB62ED53BAE00149065 /* ContentView.swift */,
+				85B4CFB82ED53BB000149065 /* Assets.xcassets */,
+				85B4CFBA2ED53BB000149065 /* cafecito_iOS.entitlements */,
+				85B4CFBB2ED53BB000149065 /* Preview Content */,
+			);
+			path = "cafecito-iOS";
+			sourceTree = "<group>";
+		};
+		85B4CFBB2ED53BB000149065 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				85B4CFBC2ED53BB000149065 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		85B4CFC52ED53BB000149065 /* cafecito-iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				85B4CFC62ED53BB000149065 /* cafecito_iOSTests.swift */,
+			);
+			path = "cafecito-iOSTests";
+			sourceTree = "<group>";
+		};
+		85B4CFCF2ED53BB000149065 /* cafecito-iOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				85B4CFD02ED53BB000149065 /* cafecito_iOSUITests.swift */,
+				85B4CFD22ED53BB000149065 /* cafecito_iOSUITestsLaunchTests.swift */,
+			);
+			path = "cafecito-iOSUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		85B4CFB02ED53BAE00149065 /* cafecito-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85B4CFD62ED53BB000149065 /* Build configuration list for PBXNativeTarget "cafecito-iOS" */;
+			buildPhases = (
+				85B4CFAD2ED53BAE00149065 /* Sources */,
+				85B4CFAE2ED53BAE00149065 /* Frameworks */,
+				85B4CFAF2ED53BAE00149065 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "cafecito-iOS";
+			productName = "cafecito-iOS";
+			productReference = 85B4CFB12ED53BAE00149065 /* cafecito-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		85B4CFC12ED53BB000149065 /* cafecito-iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85B4CFD92ED53BB000149065 /* Build configuration list for PBXNativeTarget "cafecito-iOSTests" */;
+			buildPhases = (
+				85B4CFBE2ED53BB000149065 /* Sources */,
+				85B4CFBF2ED53BB000149065 /* Frameworks */,
+				85B4CFC02ED53BB000149065 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				85B4CFC42ED53BB000149065 /* PBXTargetDependency */,
+			);
+			name = "cafecito-iOSTests";
+			productName = "cafecito-iOSTests";
+			productReference = 85B4CFC22ED53BB000149065 /* cafecito-iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		85B4CFCB2ED53BB000149065 /* cafecito-iOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85B4CFDC2ED53BB000149065 /* Build configuration list for PBXNativeTarget "cafecito-iOSUITests" */;
+			buildPhases = (
+				85B4CFC82ED53BB000149065 /* Sources */,
+				85B4CFC92ED53BB000149065 /* Frameworks */,
+				85B4CFCA2ED53BB000149065 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				85B4CFCE2ED53BB000149065 /* PBXTargetDependency */,
+			);
+			name = "cafecito-iOSUITests";
+			productName = "cafecito-iOSUITests";
+			productReference = 85B4CFCC2ED53BB000149065 /* cafecito-iOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		85B4CFA92ED53BAE00149065 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					85B4CFB02ED53BAE00149065 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					85B4CFC12ED53BB000149065 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 85B4CFB02ED53BAE00149065;
+					};
+					85B4CFCB2ED53BB000149065 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 85B4CFB02ED53BAE00149065;
+					};
+				};
+			};
+			buildConfigurationList = 85B4CFAC2ED53BAE00149065 /* Build configuration list for PBXProject "cafecito-iOS" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 85B4CFA82ED53BAE00149065;
+			productRefGroup = 85B4CFB22ED53BAE00149065 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				85B4CFB02ED53BAE00149065 /* cafecito-iOS */,
+				85B4CFC12ED53BB000149065 /* cafecito-iOSTests */,
+				85B4CFCB2ED53BB000149065 /* cafecito-iOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		85B4CFAF2ED53BAE00149065 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85B4CFBD2ED53BB000149065 /* Preview Assets.xcassets in Resources */,
+				85B4CFB92ED53BB000149065 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85B4CFC02ED53BB000149065 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85B4CFCA2ED53BB000149065 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		85B4CFAD2ED53BAE00149065 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85B4CFB72ED53BAE00149065 /* ContentView.swift in Sources */,
+				85B4CFB52ED53BAE00149065 /* cafecito_iOSApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85B4CFBE2ED53BB000149065 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85B4CFC72ED53BB000149065 /* cafecito_iOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85B4CFC82ED53BB000149065 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85B4CFD32ED53BB000149065 /* cafecito_iOSUITestsLaunchTests.swift in Sources */,
+				85B4CFD12ED53BB000149065 /* cafecito_iOSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		85B4CFC42ED53BB000149065 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 85B4CFB02ED53BAE00149065 /* cafecito-iOS */;
+			targetProxy = 85B4CFC32ED53BB000149065 /* PBXContainerItemProxy */;
+		};
+		85B4CFCE2ED53BB000149065 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 85B4CFB02ED53BAE00149065 /* cafecito-iOS */;
+			targetProxy = 85B4CFCD2ED53BB000149065 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		85B4CFD42ED53BB000149065 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		85B4CFD52ED53BB000149065 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		85B4CFD72ED53BB000149065 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "cafecito-iOS/cafecito_iOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"cafecito-iOS/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "tinto.cafecito-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		85B4CFD82ED53BB000149065 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "cafecito-iOS/cafecito_iOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"cafecito-iOS/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "tinto.cafecito-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		85B4CFDA2ED53BB000149065 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "tinto.cafecito-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cafecito-iOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/cafecito-iOS";
+			};
+			name = Debug;
+		};
+		85B4CFDB2ED53BB000149065 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "tinto.cafecito-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cafecito-iOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/cafecito-iOS";
+			};
+			name = Release;
+		};
+		85B4CFDD2ED53BB000149065 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "tinto.cafecito-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "cafecito-iOS";
+			};
+			name = Debug;
+		};
+		85B4CFDE2ED53BB000149065 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "tinto.cafecito-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "cafecito-iOS";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		85B4CFAC2ED53BAE00149065 /* Build configuration list for PBXProject "cafecito-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85B4CFD42ED53BB000149065 /* Debug */,
+				85B4CFD52ED53BB000149065 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85B4CFD62ED53BB000149065 /* Build configuration list for PBXNativeTarget "cafecito-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85B4CFD72ED53BB000149065 /* Debug */,
+				85B4CFD82ED53BB000149065 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85B4CFD92ED53BB000149065 /* Build configuration list for PBXNativeTarget "cafecito-iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85B4CFDA2ED53BB000149065 /* Debug */,
+				85B4CFDB2ED53BB000149065 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85B4CFDC2ED53BB000149065 /* Build configuration list for PBXNativeTarget "cafecito-iOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85B4CFDD2ED53BB000149065 /* Debug */,
+				85B4CFDE2ED53BB000149065 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 85B4CFA92ED53BAE00149065 /* Project object */;
+}
