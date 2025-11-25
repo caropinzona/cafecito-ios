@@ -40,20 +40,22 @@ struct ShopDetailView: View {
                                 startPoint: .topLeading,
                                 endPoint: .bottomTrailing
                             )
-                            .frame(height: 220)
+                            .frame(height: 260) // Increased height for better spacing
                             
                             // Pattern/Icon overlay
                             Image(systemName: "cup.and.saucer.fill")
-                                .font(.system(size: 120))
-                                .foregroundColor(.white.opacity(0.1))
-                                .offset(x: 200, y: 20)
+                                .font(.system(size: 140))
+                                .foregroundColor(.white.opacity(0.08))
+                                .offset(x: 180, y: 40)
                                 .rotationEffect(.degrees(-15))
                             
                             VStack(alignment: .leading, spacing: 8) {
+                                Spacer() // Push content down
                                 Text(shop.name)
                                     .font(.system(size: 32, weight: .heavy, design: .rounded))
                                     .foregroundColor(.white)
                                     .shadow(radius: 2)
+                                    .multilineTextAlignment(.leading)
                                 
                                 HStack {
                                     Image(systemName: "mappin.circle.fill")
@@ -62,14 +64,16 @@ struct ShopDetailView: View {
                                 }
                                 .font(.subheadline)
                                 .foregroundColor(.white.opacity(0.9))
+                                .padding(.bottom, 40) // Add extra padding at bottom to clear the floating card
                             }
                             .padding(24)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                         }
                         
                         VStack(spacing: 24) {
                             // Rating Card
-                            HStack(spacing: 20) {
-                                VStack {
+                            HStack(spacing: 0) { // Zero spacing, control with padding/frames
+                                VStack(spacing: 4) {
                                     Text(String(format: "%.1f", shop.aggregates.globalRating))
                                         .font(.system(size: 44, weight: .black, design: .rounded))
                                         .foregroundColor(coffeeDark)
@@ -85,11 +89,11 @@ struct ShopDetailView: View {
                                     Text("\(shop.aggregates.count) reviews")
                                         .font(.caption)
                                         .foregroundColor(.secondary)
-                                        .padding(.top, 2)
                                 }
-                                .frame(width: 120)
+                                .frame(maxWidth: .infinity) // Use frame instead of fixed width
                                 
                                 Divider()
+                                    .frame(height: 60)
                                 
                                 VStack(alignment: .leading, spacing: 8) {
                                     Text("Highlights")
@@ -103,6 +107,8 @@ struct ShopDetailView: View {
                                             Text("Best for: \(topMethod)")
                                                 .font(.subheadline)
                                                 .fontWeight(.medium)
+                                                .lineLimit(2) // Allow text to wrap if long
+                                                .fixedSize(horizontal: false, vertical: true)
                                         }
                                     } else {
                                         Text("No ratings yet")
@@ -111,12 +117,16 @@ struct ShopDetailView: View {
                                             .foregroundColor(.secondary)
                                     }
                                 }
+                                .frame(maxWidth: .infinity, alignment: .leading) // Use frame instead of spacer
+                                .padding(.leading, 16)
                             }
                             .padding(20)
                             .background(Color.white)
                             .cornerRadius(20)
-                            .shadow(color: Color.black.opacity(0.05), radius: 10, x: 0, y: 5)
-                            .offset(y: -30) // Overlap effect
+                            .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 5)
+                            .padding(.horizontal, 16) // Ensure card doesn't touch screen edges
+                            .offset(y: -50) // Pull up more to overlap header nicely
+                            .padding(.bottom, -30) // Compensate for the negative offset in the layout flow
                             
                             // Brew Methods Section
                             VStack(alignment: .leading, spacing: 16) {
