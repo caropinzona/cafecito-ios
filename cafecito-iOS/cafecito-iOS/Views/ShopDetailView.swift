@@ -6,6 +6,7 @@ struct ShopDetailView: View {
     @State private var shop: Shop?
     @State private var isLoading = true
     @State private var errorMessage: String?
+    @State private var isShowingRateSheet = false
     
     var body: some View {
         ScrollView {
@@ -78,7 +79,7 @@ struct ShopDetailView: View {
                     
                     // Call to Action
                     Button(action: {
-                        // TODO: Open Review Form
+                        isShowingRateSheet = true
                     }) {
                         Label("Rate this Coffee", systemImage: "star.fill")
                             .frame(maxWidth: .infinity)
@@ -94,6 +95,14 @@ struct ShopDetailView: View {
         .navigationBarTitleDisplayMode(.inline)
         .task {
             await fetchShopDetails()
+        }
+        .sheet(isPresented: $isShowingRateSheet) {
+            RateCoffeeView(shopID: shopID, isPresented: $isShowingRateSheet) {
+                // Refresh details after submission
+                Task {
+                    await fetchShopDetails()
+                }
+            }
         }
     }
     

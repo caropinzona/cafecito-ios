@@ -25,6 +25,7 @@
 		85EC402B2ED5446C00BC4A24 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 85EC402A2ED5446C00BC4A24 /* FirebaseStorage */; };
 		85EC40302ED5483F00BC4A24 /* ShopPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC402C2ED5483F00BC4A24 /* ShopPreviewView.swift */; };
 		85EC40312ED5483F00BC4A24 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85EC402E2ED5483F00BC4A24 /* Preview Assets.xcassets */; };
+		85EC40332ED54ACD00BC4A24 /* ShopDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC40322ED54ACD00BC4A24 /* ShopDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		85B4CFE72ED5418E00149065 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		85EC402C2ED5483F00BC4A24 /* ShopPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopPreviewView.swift; sourceTree = "<group>"; };
 		85EC402E2ED5483F00BC4A24 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		85EC40322ED54ACD00BC4A24 /* ShopDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShopDetailView.swift; path = Views/ShopDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 		85B4CFB32ED53BAE00149065 /* cafecito-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				85EC40322ED54ACD00BC4A24 /* ShopDetailView.swift */,
 				85EC402F2ED5483F00BC4A24 /* Preview Content */,
 				85EC402D2ED5483F00BC4A24 /* Views */,
 				85B4CFE42ED5418E00149065 /* Managers */,
@@ -339,6 +342,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85EC40332ED54ACD00BC4A24 /* ShopDetailView.swift in Sources */,
 				85B4CFEB2ED5418E00149065 /* Review.swift in Sources */,
 				85B4CFB72ED53BAE00149065 /* ContentView.swift in Sources */,
 				85B4CFB52ED53BAE00149065 /* cafecito_iOSApp.swift in Sources */,
