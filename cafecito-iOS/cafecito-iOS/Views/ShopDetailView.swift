@@ -106,20 +106,18 @@ struct ShopDetailView: View {
         }
     }
     
-    private func fetchShopDetails() {
-        Task {
-            do {
-                let doc = try await Firestore.firestore().collection("shops").document(shopID).getDocument()
-                if let fetchedShop = try? doc.data(as: Shop.self) {
-                    self.shop = fetchedShop
-                } else {
-                    self.errorMessage = "Shop not found"
-                }
-                self.isLoading = false
-            } catch {
-                self.errorMessage = error.localizedDescription
-                self.isLoading = false
+    private func fetchShopDetails() async {
+        do {
+            let doc = try await Firestore.firestore().collection("shops").document(shopID).getDocument()
+            if let fetchedShop = try? doc.data(as: Shop.self) {
+                self.shop = fetchedShop
+            } else {
+                self.errorMessage = "Shop not found"
             }
+            self.isLoading = false
+        } catch {
+            self.errorMessage = error.localizedDescription
+            self.isLoading = false
         }
     }
 }
