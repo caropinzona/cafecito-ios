@@ -4,17 +4,38 @@ import FirebaseFirestore
 
 class ShopDiscoveryManager: NSObject, ObservableObject {
     private let db = Firestore.firestore()
+    @Published var savedShops: [Shop] = []
+    private var listener: ListenerRegistration?
+    
+    override init() {
+        super.init()
+        listenToShops()
+    }
+    
+    deinit {
+        listener?.remove()
+    }
+    
+    // Listen for realtime updates from Firestore
+    func listenToShops() {
+        listener = db.collection("shops").addSnapshotListener { [weak self] snapshot, error in
+            guard let self = self else { return }
+            guard let snapshot = snapshot else {
+                print("Error fetching snapshots: \(error!)")
+                return
+            }
+            
+            self.savedShops = snapshot.documents.compactMap { document in
+                try? document.data(as: Shop.self)
+            }
+        }
+    }
     
     // Search for coffee shops using Apple's MKLocalSearch
     func searchForShop(query: String) async throws -> [MKMapItem] {
         let request = MKLocalSearch.Request()
         request.naturalLanguageQuery = query
         request.resultTypes = .pointOfInterest
-        
-        // Filter explicitly for coffee and bakery if possible by query or post-filtering
-        // MKLocalSearch.Request doesn't have a strict category filter array, 
-        // but we can prioritize the user's query logic.
-        // In a real app, we might want to bound this by region (searchRegion).
         
         let search = MKLocalSearch(request: request)
         let response = try await search.start()
@@ -34,14 +55,8 @@ class ShopDiscoveryManager: NSObject, ObservableObject {
             throw NSError(domain: "ShopDiscoveryManager", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid MapItem"])
         }
         
-        // 1. Check for duplicates (Fuzzy match within ~20m)
-        // Note: Firestore GeoQueries require a library or geohashing. 
-        // For this snippet, we'll assume a simplified check or that we rely on an external GeoFire library/implementation.
-        // Alternatively, we can query by exact name + lat/long bounds if traffic is low.
-        // Here is a placeholder for the logic described:
-        
-        let alreadyExists = try await checkIfExists(coordinate: coordinate)
-        if let existingID = alreadyExists {
+        // 1. Check for duplicates
+        if let existingID = checkLocalDuplicate(coordinate: coordinate) {
             return existingID
         }
         
@@ -55,12 +70,17 @@ class ShopDiscoveryManager: NSObject, ObservableObject {
         return newShop.id
     }
     
-    private func checkIfExists(coordinate: CLLocationCoordinate2D) async throws -> String? {
-        // IMPLEMENTATION NOTE:
-        // Real geo-queries on Firestore require specific indexing or Geohashes.
-        // For MVP/Prototype, we might just query by name and check distance on the client 
-        // if the dataset is small, OR use Geohash.
-        // Returning nil means "Not found, safe to create".
+    // Check if we already have this shop in our local list (simple distance check)
+    private func checkLocalDuplicate(coordinate: CLLocationCoordinate2D) -> String? {
+        for shop in savedShops {
+            let shopLoc = CLLocation(latitude: shop.coordinates.latitude, longitude: shop.coordinates.longitude)
+            let newLoc = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+            
+            // If within 20 meters, consider it the same shop
+            if shopLoc.distance(from: newLoc) < 20 {
+                return shop.id
+            }
+        }
         return nil
     }
     
@@ -75,4 +95,3 @@ class ShopDiscoveryManager: NSObject, ObservableObject {
         return lines.compactMap { $0 }.joined(separator: " ")
     }
 }
-

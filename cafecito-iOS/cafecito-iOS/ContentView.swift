@@ -1,5 +1,6 @@
 import SwiftUI
 import MapKit
+import CoreLocation
 
 struct MapItemWrapper: Identifiable {
     let id = UUID()
@@ -26,13 +27,31 @@ struct ContentView: View {
                 Map(position: $cameraPosition, selection: $selectedMapItem) {
                     UserAnnotation()
                     
-                    ForEach(foundItems, id: \.self) { item in
-                        Annotation(item.name ?? "Shop", coordinate: item.placemark.coordinate) {
+                    // 1. Existing Shops (Green) - Click to View Details
+                    ForEach(shopDiscovery.savedShops) { shop in
+                        Annotation(shop.name, coordinate: CLLocationCoordinate2D(latitude: shop.coordinates.latitude, longitude: shop.coordinates.longitude)) {
                             Image(systemName: "cup.and.saucer.fill")
                                 .font(.title)
                                 .foregroundColor(.white)
                                 .padding(8)
-                                .background(Color.brown)
+                                .background(Color.green) // Green for saved shops
+                                .clipShape(Circle())
+                                .shadow(radius: 2)
+                                .onTapGesture {
+                                    // Navigate directly to details
+                                    navigationPath.append(shop.id)
+                                }
+                        }
+                    }
+                    
+                    // 2. Search Results (Brown) - Click to Add
+                    ForEach(foundItems, id: \.self) { item in
+                        Annotation(item.name ?? "Shop", coordinate: item.placemark.coordinate) {
+                            Image(systemName: "plus.circle.fill")
+                                .font(.title)
+                                .foregroundColor(.white)
+                                .padding(8)
+                                .background(Color.brown) // Brown for potential new shops
                                 .clipShape(Circle())
                                 .shadow(radius: 2)
                                 .onTapGesture {
@@ -113,8 +132,11 @@ struct ContentView: View {
                 presentedSheetItem = nil
                 selectedMapItem = nil
                 
+                // Clear search results so we see the new green pin instead
+                foundItems = []
+                searchText = ""
+                
                 // Navigate to Detail View
-                // We use a small delay to ensure the sheet is dismissed before pushing
                 try await Task.sleep(nanoseconds: 300_000_000) // 0.3s
                 navigationPath.append(shopID)
             } catch {
