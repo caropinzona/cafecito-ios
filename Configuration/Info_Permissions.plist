@@ -4,11 +4,11 @@
 <dict>
     <!-- Location Permissions -->
     <key>NSLocationWhenInUseUsageDescription</key>
-    <string>Tinto needs your location to show nearby coffee shops.</string>
+    <string>Cafecito needs your location to show nearby coffee shops.</string>
     
     <!-- Camera Permissions -->
     <key>NSCameraUsageDescription</key>
-    <string>Tinto needs camera access to scan menus and coffee bags.</string>
+    <string>Cafecito needs camera access to scan menus and coffee bags.</string>
 </dict>
 </plist>
 

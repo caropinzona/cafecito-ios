@@ -1,11 +1,11 @@
-# Tinto (cafecito-ios)
+# cafecito-iOS
 
 **Role:** Senior iOS Architect & Backend Lead
 **Tech Stack:** iOS 18 (SwiftUI), MapKit (Native), Firebase (Firestore + Auth + Storage)
 
 ## 1. Project Overview
 
-"Tinto" is a crowd-sourced coffee discovery app.
+"Cafecito" (formerly "Tinto") is a crowd-sourced coffee discovery app.
 - **Core Loop:** Users view a map of coffee shops -> Filter by "Brew Method" (Nitro, Pour Over) -> View/Add Ratings -> Earn Badges.
 - **Key Technical Constraint:** We are using **Apple MapKit** (not Google Maps) to save costs. We must build a custom "Shop Adder" using `MKLocalSearch`.
 
@@ -25,6 +25,11 @@
 ### Prerequisites
 - Xcode 16+ (for iOS 18 SDK)
 - Firebase Account
+
+### Xcode Project Setup
+1. Open Xcode and create a new App.
+2. Name the project **cafecito-iOS**.
+3. Save it inside the `cafecito-ios` folder.
 
 ### Firebase Setup
 1. Create a new project in the [Firebase Console](https://console.firebase.google.com/).
