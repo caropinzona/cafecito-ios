@@ -25,8 +25,18 @@ struct ContentView: View {
                 UserAnnotation()
                 
                 ForEach(foundItems, id: \.self) { item in
-                    Marker(item.name ?? "Shop", coordinate: item.placemark.coordinate)
-                        .tag(item)
+                    Annotation(item.name ?? "Shop", coordinate: item.placemark.coordinate) {
+                        Image(systemName: "cup.and.saucer.fill")
+                            .font(.title)
+                            .foregroundColor(.white)
+                            .padding(8)
+                            .background(Color.brown)
+                            .clipShape(Circle())
+                            .shadow(radius: 2)
+                            .onTapGesture {
+                                selectedMapItem = item
+                            }
+                    }
                 }
             }
             .mapControls {
